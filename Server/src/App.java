@@ -2,9 +2,20 @@
 // Authors:
 // Brian McNulty NamesAreDifficult
 
+import connect.ConnectionListener;
+import java.io.IOException;
 
 public class App {
-    public static int main(String[] args){
+    public static void main(String[] args){
+        run(args);
+    }
+
+    public static int run(String[] args){
+        try {
+            ConnectionListener.listen();
+        } catch(IOException exc){
+            return 1;
+        }
         return 0;
     }
 }
