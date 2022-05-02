@@ -9,7 +9,7 @@ package connect;
 import java.net.Socket;
 
 public class ConnectionHandler extends Thread{
-    final Socket sock;
+    private final Socket sock;
 
     public ConnectionHandler(Socket sock){
         this.sock = sock;
@@ -21,4 +21,7 @@ public class ConnectionHandler extends Thread{
 
     }
 
+    public Socket getSocket() {
+        return sock;
+    }
 }
